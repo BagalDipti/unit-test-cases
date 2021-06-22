@@ -1,0 +1,20 @@
+<property name="make.cmd" value="/usr/bin/make"/>
+
+  ...
+  ...
+  ...
+
+  <target name="testBasicMathCompile"
+        description="cppunit test compile" >
+    <exec dir="${build.native}/Test" executable="${make.cmd}" failonerror="true">
+
+    <arg value="testbasicmath"/>
+    </exec>
+  </target>
+
+  <target name="testbasicmath" 
+        description="cppunit test run" >
+    <exec dir="${build.native}/Test" executable="./testbasicmath" failonerror="false">
+    </exec>
+
+  </target>
